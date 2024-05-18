@@ -29,6 +29,5 @@ jobs:
         with:
           context: .
           file: build/Dockerfile
-          provenance: false
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/oqs-golang:0.0.1
