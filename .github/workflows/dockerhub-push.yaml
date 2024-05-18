@@ -1,0 +1,31 @@
+name: Build Docker image and push to Docker Hub
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "go.mod"
+      - "go.sum"
+      - "cmd/**"
+
+jobs:
+  dockerhub-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub Check out the repo
+        uses: actions/checkout@v4
+
+      - name: DockerHub Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: DockerHub Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: ./build
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/oqs-golang:0.0.1
