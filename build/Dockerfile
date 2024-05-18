@@ -8,7 +8,6 @@ RUN go mod download
 
 COPY cmd ./
 
-RUN ls -la
 WORKDIR /app/main
 RUN go build -o /docker-exec
 
