@@ -4,11 +4,13 @@ services:
 
   oqs:
     container_name: oqs.localhost
-    image: golang:1.22.1-alpine3.19
+    build:
+      context: ../
+      dockerfile: ./build/Dockerfile
     tty: true
     ports:
       - 1323:1323
-    working_dir: /usr/src/app/cmd/hello
+    working_dir: /usr/src/app/cmd/main
     # command:
     #   - /bin/sh
     #   - -c 
