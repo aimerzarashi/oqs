@@ -27,7 +27,6 @@ jobs:
       - name: DockerHub Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ../
-          dockerfile: ./build/Dockerfile
+          context: ./build
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/oqs-golang:0.0.1
