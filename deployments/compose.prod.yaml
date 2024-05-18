@@ -5,8 +5,7 @@ services:
   oqs:
     container_name: oqs.localhost
     build:
-      context: ../
-      dockerfile: ./build/Dockerfile
+      context: ./build
     tty: true
     ports:
       - 1323:1323
