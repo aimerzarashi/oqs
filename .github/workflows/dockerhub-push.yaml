@@ -10,6 +10,7 @@ on:
       - "go.sum"
       - "build/**"
       - "cmd/**"
+      - "internal/**"
 
 jobs:
   dockerhub-push:
