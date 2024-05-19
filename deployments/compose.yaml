@@ -16,6 +16,6 @@ services:
         go install github.com/cosmtrek/air@latest
         air
     volumes:
-      - ./:/app
+      - ./../:/app
     environment:
       SERVICE_URL: "http://oqs.localhost:1323"
