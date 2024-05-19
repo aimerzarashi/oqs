@@ -7,6 +7,7 @@ COPY go.sum ./
 RUN go mod download
 
 COPY cmd ./
+COPY internal ./
 
 WORKDIR /app/main
 RUN go build -o /docker-exec
