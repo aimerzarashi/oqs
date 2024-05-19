@@ -1,4 +1,4 @@
-module oqs
+module github.com/aimerzarashi/oqs
 
 go 1.22.1
 
