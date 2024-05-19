@@ -4,7 +4,7 @@ services:
 
   oqs:
     container_name: oqs.localhost
-    image: golang:1.22.1-alpine3.19
+    image: golang:1.22.1
     tty: true
     ports:
       - 1323:1323

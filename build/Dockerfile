@@ -1,4 +1,4 @@
-FROM golang:1.22.1-alpine3.19 AS build
+FROM golang:1.22.1 AS build
 
 WORKDIR /app
 
@@ -6,10 +6,9 @@ COPY go.mod ./
 COPY go.sum ./
 RUN go mod download
 
-COPY cmd ./
-COPY internal ./
+COPY . .
 
-WORKDIR /app/main
+WORKDIR /app/cmd/main
 RUN go build -o /docker-exec
 
 ##
