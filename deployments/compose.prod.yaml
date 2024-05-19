@@ -10,19 +10,5 @@ services:
     tty: true
     ports:
       - 1323:1323
-    working_dir: /usr/src/app/cmd/main
-    # command:
-    #   - /bin/sh
-    #   - -c 
-    #   - |
-    #     go install github.com/cosmtrek/air@latest
-    #     air
-    command:
-      - /bin/sh
-      - -c 
-      - |
-        go run main.go
-    volumes:
-      - ./../:/usr/src/app
     environment:
       SERVICE_URL: "http://oqs.localhost:1323"
