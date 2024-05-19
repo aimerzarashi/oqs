@@ -2,7 +2,8 @@ package hello
 
 import (
 	"net/http"
-	oapicodegen "oqs/internal/infra/oapicodegen/hello"
+
+	oapicodegen "github.com/aimerzarashi/oqs/internal/infra/oapicodegen/hello"
 
 	"github.com/labstack/echo/v4"
 )
